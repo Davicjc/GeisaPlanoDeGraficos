@@ -137,6 +137,38 @@ body.sidebar-collapsed .sidebar-toggle {
     -webkit-text-fill-color: transparent;
 }
 
+/* ===== Version Buttons ===== */
+.version-buttons {
+    display: flex;
+    gap: 8px;
+    padding: 12px 24px 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.version-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-secondary);
+    background: var(--bg-card-hover);
+    transition: var(--transition);
+}
+
+.version-btn:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.version-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+}
+
 .nav-menu {
     padding: 20px 12px;
     flex: 1;
