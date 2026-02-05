@@ -6,7 +6,7 @@
 
 ## 📋 Sobre o Projeto
 
-Este dashboard foi criado **a pedido da Supervisora Geisa** para demonstrar como deve ser o painel de atendimento para a empresa parceira dela. O objetivo é servir como **referência visual e funcional** para o time de desenvolvimento da empresa parceira.
+Este dashboard foi criado **a pedido da Coordenadora Geisa** para demonstrar como deve ser o painel de atendimento para a empresa parceira dela. O objetivo é servir como **referência visual e funcional** para o time de desenvolvimento da empresa parceira.
 
 ### ⚡ Aviso Importante
 
@@ -227,7 +227,7 @@ Para transformar este protótipo em produto:
 
 ## 👩‍💼 Créditos
 
-- **Solicitante:** Supervisora Geisa
+- **Solicitante:** Coordenadora Geisa
 - **Propósito:** Demonstração para empresa parceira
 - **Status:** 🔴 ALPHA (protótipo inicial)
 
@@ -241,7 +241,7 @@ Este é um projeto interno de demonstração. Todos os direitos reservados.
 
 ## 📞 Contato
 
-Para dúvidas ou sugestões sobre este protótipo, entre em contato com a Supervisora Geisa ou o time de desenvolvimento.
+Para dúvidas ou sugestões sobre este protótipo, entre em contato com a Coordenadora Geisa ou o time de desenvolvimento.
 
 ---
 
