@@ -601,6 +601,35 @@
             </div>
         </section>
 
+        <!-- Detalhes dos Atendimentos -->
+        <section class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-list-alt"></i> <span contenteditable="true">Detalhes dos Atendimentos</span></h2>
+            </div>
+            <div class="table-container" style="max-height: 220px;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th contenteditable="true">ID do Caso</th>
+                            <th contenteditable="true">Cliente</th>
+                            <th contenteditable="true">Atendente</th>
+                            <th contenteditable="true">Tempo de Atendimento</th>
+                            <th contenteditable="true">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detalhesAtendimentosBody">
+                        <tr style="background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444;"><td contenteditable="true">#10238</td><td contenteditable="true">Marcos Souza</td><td contenteditable="true">Fernanda Rocha</td><td contenteditable="true">00:23:10</td><td><i class="fas fa-exclamation-circle" style="color: #ef4444;" title="Crítico"></i></td></tr>
+                        <tr style="background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b;"><td contenteditable="true">#10240</td><td contenteditable="true">Rafael Nunes</td><td contenteditable="true">Carlos Oliveira</td><td contenteditable="true">00:18:02</td><td><i class="fas fa-exclamation-triangle" style="color: #f59e0b;" title="Atenção"></i></td></tr>
+                        <tr style="background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b;"><td contenteditable="true">#10236</td><td contenteditable="true">Pedro Santos</td><td contenteditable="true">Juliana Lima</td><td contenteditable="true">00:15:47</td><td><i class="fas fa-exclamation-triangle" style="color: #f59e0b;" title="Atenção"></i></td></tr>
+                        <tr><td contenteditable="true">#10234</td><td contenteditable="true">João Pereira</td><td contenteditable="true">Maria Silva</td><td contenteditable="true">00:12:34</td><td></td></tr>
+                        <tr><td contenteditable="true">#10239</td><td contenteditable="true">Clara Dias</td><td contenteditable="true">Maria Silva</td><td contenteditable="true">00:09:45</td><td></td></tr>
+                        <tr><td contenteditable="true">#10235</td><td contenteditable="true">Ana Costa</td><td contenteditable="true">Carlos Oliveira</td><td contenteditable="true">00:08:21</td><td></td></tr>
+                        <tr><td contenteditable="true">#10237</td><td contenteditable="true">Lucia Mendes</td><td contenteditable="true">Roberto Alves</td><td contenteditable="true">00:06:53</td><td></td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
         <!-- Tabela de Agentes -->
         <section class="section">
             <div class="section-header">
@@ -745,6 +774,12 @@
                             <h3><i class="fas fa-chart-bar"></i> <span contenteditable="true">Aderência por Hora</span></h3>
                         </div>
                         <canvas id="aderenciaHoraChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-chart-line"></i> <span contenteditable="true">Aderência por Período</span></h3>
+                        </div>
+                        <canvas id="aderenciaPeriodoChart"></canvas>
                     </div>
                 </div>
             </section>

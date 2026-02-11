@@ -293,7 +293,7 @@
                     <div class="card-content">
                         <span class="card-label">Chamadas Atendidas</span>
                         <span class="card-value" id="chamadasAtendidas">847</span>
-                        <span class="card-trend positive"><i class="fas fa-arrow-up"></i> +12% hoje</span>
+                        <span class="card-value" style="font-size: 1.2rem; color: #94a3b8;"><i class="fas fa-stopwatch"></i> TMA: <span id="tempoMedioAtendimento">4m 32s</span></span>
                     </div>
                 </div>
                 <div class="card">
@@ -314,6 +314,10 @@
                         <span class="card-label">Fila de Espera</span>
                         <span class="card-value" id="filaVoz">8</span>
                         <span class="card-subtext">aguardando atendimento</span>
+                        <div class="card-sub-info padrao">
+                            <span class="card-label">Maior tempo de espera</span>
+                            <strong id="maiorTempoEsperaVoz">00:06:15</strong>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -324,16 +328,10 @@
                         <span class="card-label">Em Atendimento</span>
                         <span class="card-value" id="emAtendimentoVoz">15</span>
                         <span class="card-subtext">clientes agora</span>
-                    </div>
-                </div>
-                <div class="card highlight">
-                    <div class="card-icon purple">
-                        <i class="fas fa-hourglass-half"></i>
-                    </div>
-                    <div class="card-content">
-                        <span class="card-label">Maior Atendimento Aberto</span>
-                        <span class="card-value time" id="maiorAtendimentoVoz">00:23:45</span>
-                        <span class="card-subtext">Agente: Maria Silva</span>
+                        <div class="card-sub-info maior-atendimento">
+                            <span class="card-label">Maior atendimento aberto</span>
+                            <strong id="maiorAtendimentoVoz">00:23:45</strong>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -348,6 +346,17 @@
                 </div>
             </div>
             <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon green">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="card-content">
+                        <span class="card-label">Atendimentos Realizados</span>
+                        <span class="card-value" id="atendimentosChat">312</span>
+                        <span class="card-value" style="font-size: 1.2rem; color: #94a3b8;"><i class="fas fa-stopwatch"></i> TMA: <span id="tempoMedioAtendimentoChat">3m 15s</span></span>
+                        <span class="card-value" style="font-size: 1.2rem; color: #94a3b8;"><i class="fas fa-reply"></i> TMR: <span id="tempoMedioRespostaChat">1m 42s</span></span>
+                    </div>
+                </div>
                 <div class="card">
                     <div class="card-icon orange">
                         <i class="fas fa-user-clock"></i>
@@ -398,7 +407,9 @@
                     <div class="card-content">
                         <span class="card-label">Backlog de Clientes</span>
                         <span class="card-value" id="backlogTotal">47</span>
-                        <div class="csat-mini-card">
+                        <div class="card-sub-info padrao">
+                            <span class="card-label">Clientes atendidos pelo BOT</span>
+                            <strong id="clientesAtendidosUra">134</strong>
                         </div>
                     </div>
                 </div>
@@ -454,6 +465,34 @@
                     </div>
                     <canvas id="pausaChart"></canvas>
                 </div>
+            </div>
+        </section>
+
+        <!-- Detalhes dos Atendimentos -->
+        <section class="section">
+            <div class="section-header">
+                <h2><i class="fas fa-list-alt"></i> Detalhes dos Atendimentos</h2>
+            </div>
+            <div class="table-container" style="max-height: 220px;">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID do Caso</th>
+                            <th>Cliente</th>
+                            <th>Atendente</th>
+                            <th>Tempo de Atendimento</th>
+                        </tr>
+                    </thead>
+                    <tbody id="detalhesAtendimentosBody">
+                        <tr style="background: rgba(239, 68, 68, 0.15); border-left: 3px solid #ef4444;"><td>#10238</td><td>Marcos Souza</td><td>Fernanda Rocha</td><td>00:23:10 <i class="fas fa-exclamation-circle" style="color: #ef4444;" title="Crítico"></i></td></tr>
+                        <tr style="background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b;"><td>#10240</td><td>Rafael Nunes</td><td>Carlos Oliveira</td><td>00:18:02 <i class="fas fa-exclamation-triangle" style="color: #f59e0b;" title="Atenção"></i></td></tr>
+                        <tr style="background: rgba(245, 158, 11, 0.1); border-left: 3px solid #f59e0b;"><td>#10236</td><td>Pedro Santos</td><td>Juliana Lima</td><td>00:15:47 <i class="fas fa-exclamation-triangle" style="color: #f59e0b;" title="Atenção"></i></td></tr>
+                        <tr><td>#10234</td><td>João Pereira</td><td>Maria Silva</td><td>00:12:34</td></tr>
+                        <tr><td>#10239</td><td>Clara Dias</td><td>Maria Silva</td><td>00:09:45</td></tr>
+                        <tr><td>#10235</td><td>Ana Costa</td><td>Carlos Oliveira</td><td>00:08:21</td></tr>
+                        <tr><td>#10237</td><td>Lucia Mendes</td><td>Roberto Alves</td><td>00:06:53</td></tr>
+                    </tbody>
+                </table>
             </div>
         </section>
 
@@ -601,6 +640,12 @@
                             <h3><i class="fas fa-chart-bar"></i> Aderência por Hora</h3>
                         </div>
                         <canvas id="aderenciaHoraChart"></canvas>
+                    </div>
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fas fa-chart-line"></i> Aderência por Período</h3>
+                        </div>
+                        <canvas id="aderenciaPeriodoChart"></canvas>
                     </div>
                 </div>
             </section>

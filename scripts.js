@@ -1005,6 +1005,7 @@ function createPausaChart() {
 function createAderenciaCharts() {
     createAderenciaDistChart();
     createAderenciaHoraChart();
+    createAderenciaPeriodoChart();
 }
 
 // Gráfico de Distribuição de Aderência
@@ -1104,6 +1105,74 @@ function createAderenciaHoraChart() {
                 y: {
                     beginAtZero: false,
                     min: 60,
+                    max: 100,
+                    ticks: {
+                        callback: function(value) {
+                            return value + '%';
+                        }
+                    },
+                    grid: {
+                        color: 'rgba(51, 65, 85, 0.5)'
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    }
+                }
+            }
+        }
+    });
+}
+
+function createAderenciaPeriodoChart() {
+    const canvas = document.getElementById('aderenciaPeriodoChart');
+    if (!canvas) {
+        console.log('Canvas aderenciaPeriodoChart não encontrado (tela 3 não visível)');
+        return;
+    }
+    
+    const ctx = canvas.getContext('2d');
+    
+    charts.aderenciaPeriodo = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Manhã', 'Tarde', 'Noite'],
+            datasets: [{
+                label: 'Aderência %',
+                data: [91, 86, 82],
+                borderColor: '#6366f1',
+                backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                fill: true,
+                tension: 0.4,
+                pointBackgroundColor: '#6366f1',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 4
+            }, {
+                label: 'Meta',
+                data: [85, 85, 85],
+                borderColor: 'rgba(239, 68, 68, 0.6)',
+                borderDash: [5, 5],
+                fill: false,
+                pointRadius: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: '#94a3b8',
+                        font: { size: 11 }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    min: 70,
                     max: 100,
                     ticks: {
                         callback: function(value) {
@@ -1260,6 +1329,11 @@ function showTela(telaId) {
                 createAderenciaHoraChart();
             } else {
                 charts.aderenciaHora.resize();
+            }
+            if (!charts.aderenciaPeriodo) {
+                createAderenciaPeriodoChart();
+            } else {
+                charts.aderenciaPeriodo.resize();
             }
         }, 100);
     }
